@@ -28,23 +28,22 @@ using System.Collections;
 		{
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
-			if (Input.GetButtonDown ("Fire1")) 
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("Fire2")) 
 			{
 				if (Physics.Raycast(ray, out hit, 100))
 				{
-					/*if (hit.collider.CompareTag("Enemy"))
+					if (hit.collider.CompareTag("Terrain"))
 					{
-						targetedEnemy = hit.transform;
-						enemyClicked = true;
+						navMeshAgent.destination = hit.point;
 					}
 
 					else
-					{*/
+					{
 						walking = true;
 						enemyClicked = false;
 						navMeshAgent.destination = hit.point;
 						navMeshAgent.Resume();
-					//}
+					}
 				}
 			}
 
