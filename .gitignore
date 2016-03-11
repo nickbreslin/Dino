@@ -1,3 +1,9 @@
+# Project Specific
+
+/Assets/DinoPack/
+/Assets/DinoPack.*
+####################################
+
 .DS_Store
 
 /[Ll]ibrary/
